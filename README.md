@@ -19,11 +19,25 @@ Initially, the Subsidiarity module was deployed internally via the APT_Governanc
 
 I refactored the module to support Dependency Injection for administrative privileges. By modifying the constructor to accept an explicit _initialAdmin address, the deployment script was updated to pass the developer's EOA (Externally Owned Account) during the standalone deployment phase.
 
-Solidity// Refactored Constructor for explicit ownership
+```
+// Refactored Constructor for explicit ownership
 constructor(address _initialAdmin) {
     admin = _initialAdmin;
 }
+```
 
 **Result:**
 
 This fix resolved EVM revert errors and gas estimation failures (where MetaMask previously defaulted to a 21M gas limit due to failed require checks). The module now correctly validates administrative identity, as confirmed by the isAuthorizedHub mapping on the Sepolia network.
+
+### Deployment Links (Sepolia Testnet)
+
+| Contract | Address | Link |
+| :--- | :--- | :--- |
+| **Governance Hub** | `0x248285D7aF3F3d1c50EB975e344Dd316f34f17F4` | [View on Etherscan](https://sepolia.etherscan.io/address/0x248285D7aF3F3d1c50EB975e344Dd316f34f17F4#code) |
+| **Conviction Voting** | `0x9aA72cFAcCa1bFAd6Fc6c5BE40ccef8F6D8f29F5` | [View on Etherscan](https://sepolia.etherscan.io/address/0x9aA72cFAcCa1bFAd6Fc6c5BE40ccef8F6D8f29F5#code) |
+| **Optimistic Governance** | `0x3318F4D54ca1f9aD3641dF8Bdf6953881f1a6e7f` | [View on Etherscan](https://sepolia.etherscan.io/address/0x3318F4D54ca1f9aD3641dF8Bdf6953881f1a6e7f#code) |
+| **Optimistic Governance V2** | `0x92801f0ee5d37F7945D8720FDD85617c0cba2f2b` | [View on Etherscan](https://sepolia.etherscan.io/address/0x92801f0ee5d37F7945D8720FDD85617c0cba2f2b#code) |
+| **Quadratic Voting** | `0x024Aaa0324abB77a7e3eDF5E6Ef34733D61d2Ff2` | [View on Etherscan](https://sepolia.etherscan.io/address/0x024Aaa0324abB77a7e3eDF5E6Ef34733D61d2Ff2#code) |
+| **Recursive Subsidiarity** | `0x980114515E67E1e15Ff139894Db1b5A95432B09f` | [View on Etherscan](https://sepolia.etherscan.io/address/0x980114515E67E1e15Ff139894Db1b5A95432B09f#code) |
+| **Recursive Subsidiarity updated** | `0x3abF65bB1D9e798936e6a4Ab92Fd5463EFd9a441` | [View on Etherscan](https://sepolia.etherscan.io/address/0x3abf65bb1d9e798936e6a4ab92fd5463efd9a441#code) |
