@@ -30,6 +30,12 @@ constructor(address _initialAdmin) {
 
 This fix resolved EVM revert errors and gas estimation failures (where MetaMask previously defaulted to a 21M gas limit due to failed require checks). The module now correctly validates administrative identity, as confirmed by the isAuthorizedHub mapping on the Sepolia network.
 
+**How to Verify Status:**
+
+To check the authorization status of a hub via the terminal, run:
+
+`npx hardhat run scripts/checkStatus.js --network sepolia`
+
 ### Deployment Links (Sepolia Testnet)
 
 | Contract | Address | Link |
